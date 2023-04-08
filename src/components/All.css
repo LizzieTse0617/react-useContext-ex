@@ -5,17 +5,58 @@
     background-color: beige;
     display: grid; 
     grid-template-columns: 0.4fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
+    grid-template-rows: 0.5fr 0.5fr; 
+
     grid-template-areas: 
       "avatar name fav_btn"
       "avatar email fav_btn"; 
   }
   .avatar { grid-area: avatar; 
-width: 100px;}
+width: 5rem;}
   .name { grid-area: name;
 text-align: left; }
   .email { grid-area: email; 
     text-align: left; }
   .fav_btn { grid-area: fav_btn;
+  
+ 
  }
+
+ .App header{
+  border: 0.1px solid #3c3744;
+  margin:0;
+  padding:2rem;
+  color: white;
+  background: #3c3744;
+ 
+ }
+
+ .mainNav a {
+  color: #fbfff1;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  margin-inline: 2rem;
+}
+
+.mainNav a.active,
+.mainNav a:hover {
+  color: #090c9b;
+  text-decoration: underline;
+ 
+}
+
+.mainNav a.big {
+  font-size: 2rem;
+  color: #dcfb53;
+}
+
+.mainNav {
+  background-color:#3066be;
+  padding: 1rem 0;
+
+}
+
+.home{
+ padding-top:3rem;
+}

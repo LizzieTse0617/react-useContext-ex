@@ -27,8 +27,8 @@ if (users.length === 0){
 
   return (
     
-    <div>
-     
+    <div className="home">
+  
     <h2>Home</h2>
 
 

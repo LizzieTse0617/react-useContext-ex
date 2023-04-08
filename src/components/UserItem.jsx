@@ -3,26 +3,26 @@ import './All.css'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { useContext } from 'react';
-import { FavContext } from './useContext/FavContent';
+import { FavContext } from './hooks/FavContent';
 
 
 export default function UserItem({ user }) {
-  const [isToggled, setIsToggled] = useState(FavContext);
-
+  const [fav, setFav] = useState(FavContext);
 
 
   function handleToggle() {
-    setIsToggled((prevIsToggled) => {
+    setFav((prevIsToggled) => {
       const newIsToggled = !prevIsToggled;
       if (newIsToggled) {
         // add the username to local storage
         const productList = JSON.parse(
-          localStorage.getItem("product-view-list") || "[]"
+          localStorage.getItem("product-view-list") 
         );
+        console.log(productList)
  
         const updatedProductList = [...productList, {
-          firstName: user.first_name,
-          lastName: user.last_name,
+          first_name: user.first_name,
+          last_name: user.last_name,
           email: user.email,
           avatar: user.avatar,
         },];
@@ -45,7 +45,7 @@ export default function UserItem({ user }) {
         <div>
           <button className="fav_btn" onClick={handleToggle}>
           
-{isToggled ? <FavoriteIcon sx={{ fontSize: 40 }} color="secondary" /> : <FavoriteIcon />}
+{fav ?  <FavoriteIcon /> :<FavoriteIcon sx={{ fontSize: 40 }} color="secondary" />}
           </button>
         </div>
       </li>

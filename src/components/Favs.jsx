@@ -7,13 +7,20 @@ export default function Favs() {
   return (
     <div>
     <h1>Favorite Page</h1>
-    {favList.map((product, index) => (
+
+    {favList.map((user, index) => (
       <div key={index}>
-        <p>{product.first_name} {product.last_name}</p>
-        <p>{product.email}</p>
-        <img src={product.avatar} alt={`${product.first_name} ${product.last_name}`} />
+    <li className="li">
+    <img className="avatar" src={user.avatar}/>
+    <div className="name">{user.first_name} {user.last_name}</div>
+    <div>{user.email}</div>
+    </li>
       </div>
     ))}
   </div>
+
+
+
+
   )
 }
