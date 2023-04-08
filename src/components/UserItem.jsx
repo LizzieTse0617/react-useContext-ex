@@ -7,17 +7,32 @@ import { FavContext } from './useContext/FavContent';
 
 
 export default function UserItem({ user }) {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(FavContext);
 
 
 
   function handleToggle() {
-    setIsToggled(prevIsToggled => {
-      console.log('prevIsToggled:', prevIsToggled);
-      console.log('!prevIsToggled:', !prevIsToggled);
-      return !prevIsToggled;
+    setIsToggled((prevIsToggled) => {
+      const newIsToggled = !prevIsToggled;
+      if (newIsToggled) {
+        // add the username to local storage
+        const productList = JSON.parse(
+          localStorage.getItem("product-view-list") || "[]"
+        );
+ 
+        const updatedProductList = [...productList, {
+          firstName: user.first_name,
+          lastName: user.last_name,
+          email: user.email,
+          avatar: user.avatar,
+        },];
+        localStorage.setItem(
+          "product-view-list",
+          JSON.stringify(updatedProductList)
+        );
+      }
+      return newIsToggled;
     });
-    console.log(user)
   }
 
   return (

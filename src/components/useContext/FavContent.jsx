@@ -11,8 +11,8 @@ function FavProvider({children}){
    // const [fav, setFav] = useState([]);
 
    // const [isToggled, setIsToggled] = useState(false);
-    const [isToggled, setIsToggled] = useLocalStorage('product-viewer-list', []);
-   // const [fav,setFav] = useLocalStorage('My-favorite-List',[]);
+    const [isToggled, setIsToggled] = useLocalStorage('product-viewer-list', false);
+ 
    return (
     <FavContext.Provider value={{ isToggled, setIsToggled }}>
       {children}
