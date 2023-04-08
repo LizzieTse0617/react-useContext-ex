@@ -12,7 +12,12 @@ export default function UserItem({ user }) {
 
 
   function handleToggle() {
-    setIsToggled(prevIsToggled => !prevIsToggled);
+    setIsToggled(prevIsToggled => {
+      console.log('prevIsToggled:', prevIsToggled);
+      console.log('!prevIsToggled:', !prevIsToggled);
+      return !prevIsToggled;
+    });
+    console.log(user)
   }
 
   return (

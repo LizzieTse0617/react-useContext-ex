@@ -3,7 +3,7 @@ import Favs from './components/Favs';
 import Nav from './components/Nav';
 import './App.css';
 import Home from './components/Home';
-import { FavContext } from './components/useContext/FavContent';
+
 import NotFound from './components/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function App() {
   }, [fav]);
 
   return (
-    <FavContext.Provider value={{ fav, setFav }}>
+  
       <div className="App">
         <h1>Saving user data in local storage exercise</h1>
         <Nav />
@@ -34,7 +34,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </FavContext.Provider>
+
   );
 }
 

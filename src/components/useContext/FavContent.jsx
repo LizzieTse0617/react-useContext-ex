@@ -6,11 +6,12 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 const FavContext = createContext();
 
 
-function FavProvider( {}){
+function FavProvider({children}){
 
    // const [fav, setFav] = useState([]);
 
-    const [isToggled, setIsToggled] = useState(false);
+   // const [isToggled, setIsToggled] = useState(false);
+    const [isToggled, setIsToggled] = useLocalStorage('product-viewer-list', []);
    // const [fav,setFav] = useLocalStorage('My-favorite-List',[]);
    return (
     <FavContext.Provider value={{ isToggled, setIsToggled }}>
