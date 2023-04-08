@@ -1,0 +1,21 @@
+
+
+.li {
+    margin:0.5rem;
+    background-color: beige;
+    display: grid; 
+    grid-template-columns: 0.4fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "avatar name fav_btn"
+      "avatar email fav_btn"; 
+  }
+  .avatar { grid-area: avatar; 
+width: 100px;}
+  .name { grid-area: name;
+text-align: left; }
+  .email { grid-area: email; 
+    text-align: left; }
+  .fav_btn { grid-area: fav_btn;
+ }
